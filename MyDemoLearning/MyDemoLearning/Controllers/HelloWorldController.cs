@@ -17,9 +17,12 @@ namespace MyDemoLearning.Controllers
         // 
         // GET: /HelloWo rld/Welcome/ 
 
-        public string Welcome(string name, int numTimes)
+        public ActionResult Welcome(string name, int numTimes = 1)
         {
-            return HttpUtility.HtmlEncode("Hello " + name + ", NumTimes is: " + numTimes);
+            ViewBag.Message = "Hello " + name;
+            ViewBag.NumTimes = numTimes;
+
+            return View();
         }
     }
 }
